@@ -70,6 +70,29 @@ namespace Learn
             }
             return result;
         }
+        
+        public int[] SelectionSort(int[] arr)
+        {
+            int[] result = new int[arr.Length];
+            int resultIndex = 0;
+            while(arr.Length > 0)
+            {
+                int min = int.MaxValue;
+                int minIndex = -1;
+                for(int i = 0; i < arr.Length; ++i)
+                {
+                    if(arr[i] < min)
+                    {
+                        min = arr[i];
+                        minIndex = i;
+                    }
+                }
+
+                result[resultIndex++] = min;
+                arr = arr.Where((src, index) => index != minIndex).ToArray();
+            }
+            return result;
+        }
     }
 
 }

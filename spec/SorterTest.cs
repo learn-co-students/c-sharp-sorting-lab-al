@@ -12,8 +12,7 @@ namespace NUnitWithDotNetCoreRC2.Test
         {
             int[] input = new int[] {4,6,1,2,4,6,8,2,3,5,9,1,3};
             int[] result = new Sorter().BubbleSort(input);
-            //WRONG. remove 5
-            int[] expected = new int[] {1, 1, 2, 2, 5, 3, 3, 4, 4, 5, 6, 6, 8, 9};
+            int[] expected = new int[] {1, 1, 2, 2, 3, 3, 4, 4, 5, 6, 6, 8, 9};
             Assert.AreEqual(result,expected);
         }
 
@@ -22,10 +21,19 @@ namespace NUnitWithDotNetCoreRC2.Test
         {
             int[] input = new int[] {4,6,1,2,4,6,8,2,3,5,9,1,3};
             int[] result = new Sorter().BubbleSort(input);
-            //WRONG. remove 5
-            int[] expected = new int[] {1, 1, 2, 2, 5, 3, 3, 4, 4, 5, 6, 6, 8, 9};
+            int[] expected = new int[] {1, 1, 2, 2, 3, 3, 4, 4, 5, 6, 6, 8, 9};
             Assert.AreEqual(result,expected);
         }
+
+        [Test]
+        public void SelectionSortTest()
+        {
+            int[] input = new int[] {4,6,1,2,4,6,8,2,3,5,9,1,3};
+            int[] result = new Sorter().SelectionSort(input);
+            int[] expected = new int[] {1, 1, 2, 2, 3, 3, 4, 4, 5, 6, 6, 8, 9};
+            Assert.AreEqual(result,expected);
+        }
+
 
 
     }
